@@ -1,0 +1,13 @@
+12/03
+genre/literature リタラチアー
+Literaature
+genre_no　2
+
+
+12/03文芸追加
+
+★画像消えた時テストの後に復旧し忘れているかも・以下のコマンドで戻る★
+```
+docker-compose exec laravel php artisan DB:seed
+
+★プルリクエスト出なかったとき・・コンフリクト直して⇒バックアップ⇒テストしたら出た

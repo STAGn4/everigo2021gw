@@ -1,0 +1,216 @@
+12/25-1/4
+
+★システム起動★	
+ZOOM	jingijaguar0073@yahoo.co.jp	5Deishi3w0		
+SHIBAKAWAシステム	http://localhost	admin	←ユーザー名パスワード同じ	
+docker起動	docker-compose up -d			
+dockerエラー出たとき	docker compose exec laravel chown www-data storage/ -R			
+docker停止	docker-compose down			
+------------------------------------------------------------
+★ファイルのパス一覧★
+・Controllers
+laravel＞app＞Http＞Controllers
+・webphp
+laravel＞routes＞webphp
+・css
+laravel＞public＞css
+・blade.php
+laravel＞resources＞views＞companycompany.blade.php
+・favicon
+laravel＞public＞favicon
+・image
+laravel＞public＞image＞common＞icons
+・Repositories
+laravel＞app＞Repositories
+------------------------------------------------------------
+★blade.phpの確認★
+<?php dd('');?>テンプレ
+例※　<?php dd('$company');?>
+
+●phpMyadmin　カテゴリ追加　company_category_no
+------------------------------------------------------------
+★github運用変更★
+
+1. 課題単位でブランチを作成
+（ブランチ作成前にmainのプルを忘れずに）
+
+2. コミット・プッシュは都度（毎日）
+
+3. 課題が終わったらデータベースのバックアップ
+
+　　①VScodeでMySQLに接続　→docker-compose exec mysql bash
+
+　　②以下のコマンドでsample_dbのバックアップを作成
+　　mysqldump -u root -p sample_db > ./var/lib/mysql/sample_db_1125.dump
+
+　　③3．ls -l　コマンドでバックアップファイルが出来ている事を確認
+　　　日付変え忘れたけど11/18バックアップOK　
+★バックアップファイルできる場所★
+C:\Users\infog\Documents\GitHub\everigo2021-019\docker\mysql\data
+
+　　④復元は
+ 　　 mysql -u root -p sample_db < ./var/lib/mysql/sample_db_xxx.dump
+
+4. ローカルテスト
+　　# テスト
+```
+docker-compose exec laravel php artisan test
+```
+※テストの都合上データベースが初期化されるので気を付けてください。
+  
+5. プルリクエスト
+
+6. マージ
+
+-----------------------------------------------------------------
+★githubの用語復習★
+• プル
+→ローカルPCに最新プログラムをダウンロード
+
+• ブランチ
+→不具合が起こって大丈夫な実験環境
+
+• コミット
+→セーブポイント
+
+• パブリッシュブランチ
+→github(インターネット）にブランチを作成
+
+• プッシュ
+→github（黒）へコミットを反映
+
+• プルリクエスト
+→私のプログラム間違いないですか？チェック依頼
+
+• マージ
+→プログラム合格！本番に混ぜちゃうね！
+-----------------------------------------------------------------
+★icon場所★
+laravel＞public＞image/common＞
+
+★ロゴメーカーでロゴを作成★
+https://logo-maker.stores.jp/workspace
+
+★お問い合わせフォームボタンカラー★
+#bdb4b4　グレー
+#dbdada　うすグレー
+#e7b5b5　ピンク
+#ddbcc7　うすベージュ
+#ffffff　白
+background：#98b6a9　ピスタチオカラー
+
+
+-----------------------------------------------------------------
+
+
+hover参考サイト
+https://www.nxworld.net/css-hover-underline-animation-examples-and-sass-mixin.html
+
+
+.hd-global nav ul li{
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+.hd-global nav ul li::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #333;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform .3s;
+}
+.hd-global nav ul li:hover::after {
+  transform: scale(1, 1);
+}
+
+-----------------------------------------------------------------
+
+VScodeについて
+緑はクラスが書かれているファイル
+-----------------------------------------------------------------
+11/25TOPへジャンプボタン
+
+#page_top{
+  width: 100px;
+  height: 60px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: #ef3f98;
+  opacity: 0.6;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 60px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f102';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -25px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+#page_top a::after{
+  content: 'PAGE TOP';
+  font-size: 13px;
+  color: #fff;
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+
+-----------------------------------------------------------------
+
+完璧版
+●バックアップの仕方
+☆バップアップ〜テスト〜復元 コマンド
+・mysqlコンテナに入る
+docker-compose exec mysql bash
+・バックアップ
+mysqldump -u root -p sample_db > ./var/lib/mysql/sample_db_xxx.dump
+・バックアップした場所へ行く
+cd  ./var/lib/mysql
+★バックアップファイルできる場所★
+C:\Users\infog\Documents\GitHub\everigo2021-019\docker\mysql\data
+★デスクトップPCのファイルできる場所★
+C:\Users\PC_User\Documents\GitHub\everigo2021-019\docker\mysql\data
+
+・バックアップファイルのサイズ確認
+ls -la
+・mysqlから抜ける
+exit;
+・テスト
+docker-compose exec laravel php artisan test
+・mysqlコンテナに入る
+docker-compose exec mysql bash
+・復元
+  mysql -u root -p sample_db < ./var/lib/mysql/sample_db_xxx.dump
+
+-----------------------------------------------------------------
+
+
+
+
+
+

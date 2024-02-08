@@ -1,0 +1,53 @@
+
+文字化けのcode
+charset utf8;
+
+
+ZOOM
+jingijaguar0073@yahoo.co.jp
+5Deishi3w0
+
+
+http://localhost
+ユーザー名：admin
+パスワード：admin
+
+
+SHIBAKAWA　BOOK　STORE
+VScodeで入力
+
+
+※起動
+docker-compose up -d
+
+※エラー出たとき
+docker compose exec laravel chown www-data storage/ -R
+
+※停止
+docker-compose down
+
+http://localhost/
+
+リポジトリ
+http://54.64.210.239:83/news/134
+
+
+
+時間変更　3か所
+y n j
+
+円マークを¥に変更　4か所
+<option value=""></option>
+
+http://localhost/everigo/everigo→http://localhost/everigo/indexに変更
+　できた
+http://localhost/everigo/index
+http://localhost/everigo/webbasic
+http://localhost/everigo/programbasic
+
+
+
+http://localhost/everigo　作成　できた
+
+ブログページ追加1
+

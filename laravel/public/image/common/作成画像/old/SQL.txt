@@ -1,0 +1,176 @@
+company
+Company
+
+recruit 
+privacy
+company
+contact
+
+
+<p><a href= "/everigo" >everiGO</a>専用のシステム教材です</p>
+
+11/17☆ステップ1会社概要等ページジャンプ☆
+
+@extends('layouts.main')
+@section('title’,タイトル)
+
+@extends('layouts.main')
+
+@section('title',$company->name)
+
+@section('content')
+
+https://www.aizulab.com/blog/free-contact-form-service/
+
+HTML。cssの大元
+グーグル検索「○○ :mdn」
+<input>
+Input :mdn
+Form :mdn
+
+
+dockerで入力する場合最初に入力	mysql -p 
+
+Vscodeで入力する場合	docker-compose exec mysql bash
+
+文字化け	charset utf8;
+
+テーブルを見る	show tables;
+
+bookのテーブルを見る	select * from book;
+
+book_noを見る	select * from book where book_no=427;
+--------------------------------------------------------------------
+
+LEFT JOIN（左側のテーブルを基準にデータを結合）	"select *
+
+ from （テーブル1）
+
+left join テーブル2
+
+on 1.キー=2.キー
+--------------------------------------------------------------------
+WHERE 条件式"
+
+Phpmayadmiで検索に使ったやつ	select * from ;
+ジャンルの絞込み	SELECT*FROM genre;
+	UPDATE genre SET display =1;
+	
+SQL構文一覧サイト	https://qiita.com/tatsuya4150/items/69c2c9d318e5b93e6ccd
+
+"where文（ホエアく）
+SQL文で検索条件を指定するためのもの"	where('news.news_category_no', 4)
+
+ロゴ作成	https://logo-maker.stores.jp/workspace
+
+----------------------------------------------------------------------
+
+
+
+style_pc.cssに追加　ht　ft　の間に
+
+ /* 11/18課題ステップ2追加 */
+
+  .test
+  .lead-form{
+    text-align: center;
+    font-size:20px;
+  }
+  form{
+    width:460px;
+    margin:0 auto;
+  }
+  .item{
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .label{
+    float: left;
+    margin-right: 20px;
+    width:135px;
+    border-left: solid 3px #d1959a;
+    padding-left: 10px;
+  }
+  .inputs{
+    float: left;
+    width:300px;
+  }
+  input[type="text"],input[type="email"]{
+    border: solid 1px #aaa;
+    border-radius:5px;
+    padding:10px;
+    font-size: 15px;
+  }
+  textarea{
+    border: solid 1px #aaa;
+    border-radius:5px;
+    padding: 10px;
+    height: 160px;
+    font-size: 15px;
+  }
+  .btn-area{
+    text-align: center;
+  }
+  input[type="submit"]{
+    background: #d1959a;
+    border: none;
+    color: white;
+    font-size:17px;
+    font-weight:bold;
+    padding: 10px 20px;
+    margin: 0 5px;
+  }
+  input[type="reset"]{
+    background: #aaa;
+    border: none;
+    color: white;
+    font-size:17px;
+    font-weight:bold;
+    padding: 10px 20px;
+    margin: 0 5px;
+  }
+
+ /* 11/18課題ステップ2追加ここまで */
+
+
+contact.blade.phpに追加
+  <form class="test">
+
+        <p class="lead-form">お問い合わせ</p>
+
+
+      <div class="item">
+        <label class="label">お名前</label>
+        <input class="inputs" type="text" name="name">
+      </div>
+
+      <div class="item">
+        <label class="label">メールアドレス</label>
+        <input class="inputs" type="email" name="email">
+      </div>
+
+
+      <div class="item">
+        <label class="label">ご意見</label>
+        <textarea class="inputs"></textarea>
+      </div>
+
+      <div class="btn-area">
+        <input type="submit" value="送信する"><input type="reset" value="リセット">
+      </div>
+
+    </form>
+
+
+
+
+
+id="form1"
+form="form1"
+https://developer.mozilla.org/ja/
+Input :mdn
+form="form1"
+
+
+カラーピッカーのサイト
+https://color-hex.org/
